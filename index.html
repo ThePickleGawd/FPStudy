@@ -77,6 +77,21 @@
                 progressBarFull.style.width = `${100 * progress}%`;
               }).then((unityInstance) => {
                 loadingCover.style.display = "none";
+
+                /* DYLAN STUFF */
+
+                document.addEventListener('pointerlockchange', () => {
+
+                  console.log('pointerlockchange with ', document.pointerLockElement, canvas)
+
+                  if(document.pointerLockElement != canvas) {
+                    console.log("Pause game called by pointerlockchange");
+                    unityInstance.SendMessage("GameManager", "PointerLockPause");
+                  }
+                })
+
+                /* END */
+
                 if (canFullscreen) {
                   if (!hideFullScreenButton) {
                     fullscreenButton.style.display = "";
