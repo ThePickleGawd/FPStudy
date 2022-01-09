@@ -86,7 +86,7 @@
 
                   if(document.pointerLockElement != canvas) {
                     console.log("Pause game called by pointerlockchange");
-                    unityInstance.SendMessage("GameManager", "PointerLockPause");
+                    unityInstance.SendMessage("GameManager", "OnPointerLockExit");
                   }
                 })
 
