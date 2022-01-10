@@ -81,9 +81,6 @@
                 /* DYLAN STUFF */
 
                 document.addEventListener('pointerlockchange', () => {
-
-                  console.log('pointerlockchange with ', document.pointerLockElement, canvas)
-
                   if(document.pointerLockElement != canvas) {
                     console.log("Pause game called by pointerlockchange");
                     unityInstance.SendMessage("GameManager", "OnPointerLockExit");
